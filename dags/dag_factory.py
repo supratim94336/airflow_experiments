@@ -1,12 +1,4 @@
-from pathlib import Path
+# 'airflow' word is required for the dagbag to parse this file
+from dagfactory import load_yaml_dags
 
-import dagfactory
-
-
-BASE_DIR = Path('./dags')
-
-for path in BASE_DIR.glob(r'**/*'):
-    if path.name.endswith("_dag.yml"):
-        dag_factory = dagfactory.DagFactory(path.absolute())
-        dag_factory.clean_dags(globals())
-        dag_factory.generate_dags(globals())
+load_yaml_dags(globals_dict=globals(), suffix=['dag.yml'])
