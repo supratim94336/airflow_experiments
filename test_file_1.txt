@@ -1,0 +1,6 @@
+config
+dags
+docker-compose.yaml
+logs
+plugins
+test_file_1.txt
