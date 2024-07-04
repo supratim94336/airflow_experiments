@@ -3,7 +3,7 @@ from airflow.providers.amazon.aws.hooks.s3 import S3Hook
 
 
 def process_data_function():
-    s3_bucket = 'cjmm-datalake-raw'
+    s3_bucket = 'etl'
     s3_prefix_llist = ['poke_api/items_attribute', 'poke_api/items']
 
     s3_client = S3Hook(aws_conn_id='aws_s3')
