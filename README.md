@@ -39,12 +39,16 @@ docker-compose exec airflow-webserver airflow connections import connections.jso
 
 #### dataset_test
 ```
+# create bucket
 AWS_ACCESS_KEY_ID=localstack AWS_SECRET_ACCESS_KEY=localstack aws --endpoint-url=http://localhost:4566 --region=$AWS_S3_REGION s3 mb s3://etl
+
+# copy test file
 AWS_ACCESS_KEY_ID=localstack AWS_SECRET_ACCESS_KEY=localstack aws --endpoint-url=http://localhost:4566 --region=$AWS_S3_REGION s3 cp data/test_file_1.txt s3://etl/test_file_1.txt
 ```
 
 
 #### dag_factory
 ```
-AWS_ACCESS_KEY_ID=localstack AWS_SECRET_ACCESS_KEY=localstack aws --endpoint-url=http://localhost:4566 --region=$AWS_S3_REGION s3 mb s3://etl
+# import dags as yamls
+python3 dags/dag_factory.py
 ```
