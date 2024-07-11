@@ -1,0 +1,22 @@
+{
+    "aws_s3": {
+        "conn_type": "aws",
+        "description": "",
+        "login": "localstack",
+        "password": "localstack",
+        "host": "",
+        "port": null,
+        "schema": "",
+        "extra": "{\"region_name\": \"us-west-2\", \"aws_access_key_id\": \"test\", \"aws_secret_access_key\": \"test\", \"endpoint_url\": \"http://localstack:4566\"}"
+    },
+    "poke_api": {
+        "conn_type": "http",
+        "description": "",
+        "login": "",
+        "password": null,
+        "host": "https://pokeapi.co/api/v2",
+        "port": null,
+        "schema": "",
+        "extra": ""
+    }
+}

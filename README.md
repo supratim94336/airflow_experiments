@@ -24,6 +24,16 @@ type: HTTP
 host: "https://pokeapi.co/api/v2"
 ```
 
+### Easy way to setup
+After all the containers are up and running, check the airflow webserver container name, in my case it's `airflow-airflow-webserver-1`, copy the connection config to this container at `/opt/airflow` and use the `airflow-webserver` service to import it
+```
+# copy the connections config to airflow webserver container
+docker cp config/connections.json airflow-airflow-webserver-1:/opt/airflow
+
+# import the connection in airflow webserver service
+docker-compose exec airflow-webserver airflow connections import connections.json
+```
+
 
 ### Commands
 
