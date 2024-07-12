@@ -6,11 +6,10 @@ from airflow.providers.amazon.aws.operators.s3 import S3FileTransformOperator
 
 
 SOURCE_KEY = Variable.get("s3_source_key", "s3://etl/test_file_1.txt")
-DEST_KEY = Variable.get("s3_dest_key", "s3://etl/test_file_4.txt")
+DEST_KEY = Variable.get("s3_dest_key", "s3://etl/tests/test_file_1.txt")
 
 DEFAULT_ARGS = {
-    'start_date': datetime(2022, 9, 20),
-    'schedule_interval': '@hourly',
+    'schedule_interval': '@once',
     'catchup': False,
 }
 
