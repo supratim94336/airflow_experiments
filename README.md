@@ -6,7 +6,7 @@
 docker-compose up
 ```
 
-### Connections
+### Custom Connections
 
 #### localstack connection
 ---
@@ -42,9 +42,9 @@ docker-compose exec airflow-webserver airflow connections import connections.jso
 ```
 
 
-### Datasets
+### Custom Datasets
 
-#### Setup s3 bucket at localstack and copy files
+#### Setup s3 bucket at localstack and Copy files
 ```
 # create bucket
 AWS_ACCESS_KEY_ID=localstack AWS_SECRET_ACCESS_KEY=localstack aws --endpoint-url=http://localhost:4566 --region=$AWS_S3_REGION s3 mb s3://etl
