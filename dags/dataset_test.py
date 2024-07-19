@@ -13,8 +13,11 @@ DEFAULT_ARGS = {
     'catchup': False,
 }
 
-with DAG(dag_id='localstack_concept_example',
-    default_args=DEFAULT_ARGS) as dag:
+with DAG(
+    dag_id='localstack_concept_example',
+    default_args=DEFAULT_ARGS,
+    tags=['custom', 'supratim']
+) as dag:
 
     starting_process = BashOperator(
         task_id='starting_process',
